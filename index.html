@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      button{
+        position: absolute;
+          width: 30px;
+          height: 30px;
+         background-color: white;
+         border-radius: 50%;
+      }
+      .next-img{
+        position: relative;
+        right: 40px;
+        top: -150px;
+        font-size: 22px;
+
+      }
+      .prev-img{
+        position: relative;
+        right: 630px;
+        font-size: 22px;
+        top: -150px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="image1.png" alt="image"width="600px"height="300px"id="slider-img"/>
+    <button class="next-img" onclick="nextImg()"> <b>&#9654</b></button>
+    <button  class="prev-img" onclick="prevImg()">&#9668</button>
+
+    <script>
+        var img=[];
+        img[0]="image1.png";
+        img[1]="image2.png";
+        img[2]="image3.png";
+        i=0;
+        let image = document.getElementById("slider-img");
+
+      function nextImg() {
+        if(i<img.length-1)
+        i++;
+        else
+        i=0;
+        image.src=img[i];
+      }
+  
+      function prevImg(){
+        i--;
+        if(i==-1)
+        i=2;
+        image.src=img[i];
+      }
+      </script>
+
+  </body>
+</html>
